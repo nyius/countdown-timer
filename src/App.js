@@ -57,6 +57,10 @@ function App() {
 		setTimer(timerSeconds);
 
 		countdown();
+		setAlert({
+			message: 'Timer set!',
+			code: 'success',
+		});
 	};
 
 	// timer ---------------------------------------------------------------------------------------------------//
@@ -75,13 +79,13 @@ function App() {
 		const secondsToSeconds = Math.floor(timer % 60);
 
 		return (
-			<>
+			<div className="bg-base-300 w-full py-5 px-10 rounded-lg shadow-lg flex flex row justify-between items-center">
 				<p className="text-3xl font-thin  tracking-wide text-center mb-5">{newTimer.label}</p>
 				<p className="text-5xl font-bold tracking-wide text-center">
 					{secondsToDays}d : {secondsToHours}hr : {secondsToMinutes}min : {secondsToSeconds}
 					sec
 				</p>
-			</>
+			</div>
 		);
 	};
 
@@ -115,7 +119,7 @@ function App() {
 				</header>
 
 				{/* Timer */}
-				<div id="timer" className="w-2/4">
+				<div id="timer" className="w-3/4">
 					<TimeConvert />
 				</div>
 
