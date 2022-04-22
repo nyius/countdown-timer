@@ -105,7 +105,11 @@ function App() {
 						{alert.message}
 					</p>
 				)}
-				{alert.code === 'success' && <p className="bg-success text-xl">{alert.message}</p>}
+				{alert.code === 'success' && (
+					<p className="bg-success text-xl text-base-300 font-bold w-full py-3 px-10 rounded-lg">
+						{alert.message}
+					</p>
+				)}
 			</>
 		);
 	};
